@@ -53,7 +53,7 @@ namespace WindowsFormsApplication1
             {
                 if (Farenheit.Text != "")
                 {
-                    // Quiere saber la temperatura en Celsius
+                    // Quiere saber la temperatura en Farenheit
                     string mensaje = "2/" + Farenheit.Text;
                     // Enviamos al servidor la temperatura tecleada
                     byte[] msg = System.Text.Encoding.ASCII.GetBytes(mensaje);
@@ -63,14 +63,13 @@ namespace WindowsFormsApplication1
                     byte[] msg2 = new byte[80];
                     server.Receive(msg2);
                     mensaje = Encoding.ASCII.GetString(msg2).Split('\0')[0];
-                    MessageBox.Show("La temperatura en Farenheit es: " + mensaje);
+                    MessageBox.Show("La temperatura en Celsius es: " + mensaje);
                 }
                 else
                 {
                     MessageBox.Show("No has inserido la temperatura.");
                 }
             }
-            
         }
 
         private void button3_Click(object sender, EventArgs e)
