@@ -115,3 +115,13 @@ C:\share\MiEjercicioGuia\clienteEjercicioGuia\WindowsFormsApplication1\obj\Debug
 C:\share\MiEjercicioGuia\clienteEjercicioGuia\WindowsFormsApplication1\obj\Debug\clienteForm.csproj.CoreCompileInputs.cache
 C:\share\MiEjercicioGuia\clienteEjercicioGuia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\share\MiEjercicioGuia\clienteEjercicioGuia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\share\MiEjercicioGuia\clienteEjercicioGuiaNombre\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\share\MiEjercicioGuia\clienteEjercicioGuiaNombre\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\share\MiEjercicioGuia\clienteEjercicioGuiaNombre\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\share\MiEjercicioGuia\clienteEjercicioGuiaNombre\WindowsFormsApplication1\obj\Debug\clienteForm.csproj.AssemblyReference.cache
+C:\share\MiEjercicioGuia\clienteEjercicioGuiaNombre\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\share\MiEjercicioGuia\clienteEjercicioGuiaNombre\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\share\MiEjercicioGuia\clienteEjercicioGuiaNombre\WindowsFormsApplication1\obj\Debug\clienteForm.csproj.GenerateResource.cache
+C:\share\MiEjercicioGuia\clienteEjercicioGuiaNombre\WindowsFormsApplication1\obj\Debug\clienteForm.csproj.CoreCompileInputs.cache
+C:\share\MiEjercicioGuia\clienteEjercicioGuiaNombre\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\share\MiEjercicioGuia\clienteEjercicioGuiaNombre\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb

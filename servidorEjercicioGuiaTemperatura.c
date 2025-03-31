@@ -7,17 +7,17 @@
 #include <stdio.h>
 #include <pthread.h>
 
-int sock_conn, ret;
-char peticion[512];
-char respuesta[512];
-// INICIALITZACIONS
-
 void *AtenderCliente (void *socket){
 	
 	int sock_conn;
 	int *s;
 	s = (int *) socket;
 	sock_conn = *s;
+	
+	int ret;
+	char peticion[512];
+	char respuesta[512];
+	// INICIALITZACIONS
 	
 	//wocle de atencion al cliente
 	int terminar=0;
@@ -57,18 +57,19 @@ void *AtenderCliente (void *socket){
 			temperatura = (temperatura - 32) * 10/18;
 			sprintf (respuesta,"%f", temperatura);
 		}
-		
+				
 		if( codigo !=0){
 			printf("Respuesta: %s\n", respuesta);
 			// Enviamos la respuesta
 			write (sock_conn,respuesta, strlen(respuesta));
 		}
+		
 	}	
 }
 
 int main(int argc, char *argv[])
 {
-	int sock_listen;
+	int sock_conn, sock_listen;
 	struct sockaddr_in serv_adr;
 	// INICIALITZACIONS
 	// Obrim el socket
