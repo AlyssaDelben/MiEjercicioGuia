@@ -9,6 +9,8 @@
 
 int contador;
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+int i;
+int sockets[100];
 
 void *AtenderCliente (void *socket){
 	
@@ -50,15 +52,15 @@ void *AtenderCliente (void *socket){
 			terminar=1;
 		if (codigo ==1){
 			//piden la longitd del nombre
-			sprintf (respuesta,"%d",strlen (nombre));
+			sprintf (respuesta,"1/%d",strlen (nombre));
 		}
 		else if (codigo ==2)
 		{
 			// quieren saber si el nombre es bonito
 			if((nombre[0]=='M') || (nombre[0]=='S'))
-				strcpy (respuesta,"SI");
+				strcpy (respuesta,"2/SI");
 			else
-				strcpy (respuesta,"NO");
+				strcpy (respuesta,"2/NO");
 			
 		}
 		else if (codigo ==3)
@@ -72,21 +74,18 @@ void *AtenderCliente (void *socket){
 			}
 			
 			if (palindromo==1)
-				strcpy (respuesta,"SI");
+				strcpy (respuesta,"3/SI");
 			else
-				strcpy (respuesta,"NO");
+				strcpy (respuesta,"3/NO");
 			
 		}
-		else if (codigo==4)
+		else	
 		{
 			for(int i=0; i<strlen(nombre); i++){
 				nombre[i]=toupper(nombre[i]);
 			}
 			
-			strcpy(respuesta, nombre);
-		}
-		else{
-			sprintf(respuesta, "%d", contador);
+			sprintf(respuesta, "4/%s", nombre);
 		}
 		
 		if( codigo!=0){
@@ -99,6 +98,12 @@ void *AtenderCliente (void *socket){
 			pthread_mutex_lock (&mutex);
 			contador=contador+1;
 			pthread_mutex_unlock (&mutex);
+			sprintf(respuesta, "5/%d", contador);
+			printf("%s\n", respuesta);
+			for(int j=0; j<i; j++){
+				write (sockets[j], respuesta, strlen(respuesta));
+				printf ("%d", i);
+			}
 		}
 	}	
 }
@@ -127,9 +132,8 @@ int main(int argc, char *argv[])
 	
 	// Atenderemos peticiones
 	contador=0;
-	int i=0;
-	int sockets[100];
 	pthread_t thread;
+	i=0;
 	
 	for(;;){
 		printf ("Escuchando\n");
